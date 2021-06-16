@@ -1,0 +1,30 @@
+version: 2.1
+
+jobs:
+  build-dotnet:
+    resource_class: small
+    docker:
+      - image: hughperkins/unity-ci:latest
+    steps:
+      - checkout
+      - run:
+          name: Run
+          command: |
+            bash ci/build-ci.sh
+      - store_artifacts:
+          path: PeacefulPie/bin/Debug/netstandard2.1/PeacefulPie.dll
+      - store_artifacts:
+          path: PeacefulPie/bin/Debug/netstandard2.1/PeacefulPie.deps.json
+      - store_artifacts:
+          path: PeacefulPie/bin/Debug/netstandard2.1/PeacefulPie.pdb
+
+  deploy-python:
+    resource_class: small
+    docker:
+      - image: cimg/python:3.10.9
+    steps:
+      - checkout
+      - run:
+          name: init .pypirc
+          command: |
+            echo -e 
