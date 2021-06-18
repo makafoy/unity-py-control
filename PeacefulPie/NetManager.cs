@@ -26,4 +26,20 @@ class NetworkEvent {
 public class NetManager : MonoBehaviour {
 	[Tooltip("Network port to listen on.")]
 	public int ListenPort = 9000;
-	[Tooltip("Network 
+	[Tooltip("Network address to listen on. If not sure, put 'localhost'")]
+	public string ListenAddress = "localhost";
+	[Tooltip("Optional filepath to write logs to.")]
+	public string? LogFilepath;
+	[Tooltip("milliseconds to sleep after writing to logfile. Helps prevent runaway logs")]
+	public int SleepAfterLogLineMilliseconds = 100;
+	[Tooltip("Ensure the application runs in background. If you set this to false, you might wonder why your python scripts appears to hang")]
+	public bool AutoEnableRunInBackground = true;
+
+	bool blockingListen = false;
+	bool isDedicated;
+	volatile bool isEnabled = true;
+
+	HttpListener? listener;
+	BlockingCollection<NetworkEvent> networkEvents = new BlockingCollection<NetworkEvent>();
+
+	
