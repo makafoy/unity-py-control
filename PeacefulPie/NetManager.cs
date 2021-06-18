@@ -42,4 +42,25 @@ public class NetManager : MonoBehaviour {
 	HttpListener? listener;
 	BlockingCollection<NetworkEvent> networkEvents = new BlockingCollection<NetworkEvent>();
 
-	
+	void MyDebug(string msg) {
+		if(LogFilepath != null && LogFilepath != "") {
+			string DateTime = System.DateTime.Now.ToString("yyyyMMdd HH:mm:ss.fff");
+			using(StreamWriter sw = File.AppendText(LogFilepath)) {
+				sw.WriteLine($"{DateTime} {msg}");
+			}
+			Thread.Sleep(SleepAfterLogLineMilliseconds);
+		}
+	}
+
+	class RpcService : JsonRpcService {
+		// this is only for turning blocking on/off
+		NetManager netManager;
+		public RpcService(NetManager netManager) {
+			this.netManager = netManager;
+		}
+		[JsonRpcMethod]
+		void shutdownUnity() {
+			// This is intended for dedicatd servers that are spawned by UnityComms
+			Debug.Log("received shutdownUnity()");
+			Application.Quit();
+			Debug.Log("After applicatio
