@@ -63,4 +63,27 @@ public class NetManager : MonoBehaviour {
 			// This is intended for dedicatd servers that are spawned by UnityComms
 			Debug.Log("received shutdownUnity()");
 			Application.Quit();
-			Debug.Log("After applicatio
+			Debug.Log("After application.quit()");
+			#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+			Debug.Log("after setting isPlaying to false");
+			#endif
+			System.Diagnostics.Process.GetCurrentProcess().Kill();
+			Debug.Log("after get current process . kill. hopefully we never get here :)");
+		}
+		[JsonRpcMethod]
+		private void setBlockingListen(bool blocking)
+		{
+			// if blocking is true, then we listen for requests from python
+			// using a blocking listen. This will run faster than non-blocking,
+			// but if the python stops sending, then the editor will freeze, and the only
+			// solution (other than restarting a python sender), is to Force Quit the Unity
+			// Editor.
+			this.netManager.SetBlocking(blocking);
+		}
+	}
+
+	RpcService? rpcService;
+
+	private void Awake() {
+		rpcService 
