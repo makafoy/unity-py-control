@@ -86,4 +86,30 @@ public class NetManager : MonoBehaviour {
 	RpcService? rpcService;
 
 	private void Awake() {
-		rpcService 
+		rpcService = new RpcService(this);
+		if (AutoEnableRunInBackground) {
+			Application.runInBackground = true;
+			Debug.Log("Enabled Application.runInBackground");
+		} else
+		{
+			Debug.Log("Warning: NOT enabling Application.runInBackground. This means you will need to switch Unity to foreground for things to run.");
+		}
+	}
+
+	public void SetBlocking(bool blocking) {
+		Debug.Log($"Setting blocking network listen to {blocking}");
+		this.blockingListen = blocking;
+	}
+
+	public bool IsDedicated() {
+		return Screen.currentResolution.refreshRate == 0;
+	}
+
+	public void OnEnable() {
+		isEnabled = true;
+		isDedicated = IsDedicated();
+
+		string[] args = System.Environment.GetCommandLineArgs();
+		for(int i = 0; i < args.Length; i++) {
+			if(args[i] == "--port") {
+				ListenPort 
