@@ -112,4 +112,36 @@ public class NetManager : MonoBehaviour {
 		string[] args = System.Environment.GetCommandLineArgs();
 		for(int i = 0; i < args.Length; i++) {
 			if(args[i] == "--port") {
-				ListenPort 
+				ListenPort = int.Parse(args[i + 1]);
+				Debug.Log($"Using port {ListenPort}");
+			} else if(args[i] == "--help") {
+				Debug.Log("Specify port with '--port [port number]'");
+				Application.Quit();
+				return;
+			}
+		}
+
+		listener = new HttpListener();
+		listener.Prefixes.Add($"http://{ListenAddress}:{ListenPort}/");
+
+		listener.Start();
+		Task.Run(listenLoop);
+		MyDebug($"Started listener, on address {ListenAddress} port {ListenPort}");
+	}
+
+	public void OnDisable() {
+		isEnabled = false;
+		Debug.Log("shutting down listener");
+		if(listener is null) {
+			return;
+		}
+		listener.Stop();
+		listener.Abort();
+		listener.Close();
+	}
+
+	void FixedUpdate() {
+		int numIts = 0;
+		// while (
+		// 	(networkEvents.Count > 0 && numIts == 0)
+		// 	|| (blockingListen && numIts < 10)
