@@ -167,4 +167,35 @@ public class NetManager : MonoBehaviour {
 		NetworkEvent networkEvent = new NetworkEvent(bodyText);
 		networkEvents.Add(networkEvent);
 		networkEvent.serverReplied.WaitOne();
-		s
+		string? res = networkEvent.serverReply;
+
+		using HttpListenerResponse resp = context.Response;
+		resp.Headers.Set("Content-Type", "application/json");
+
+		byte[] buffer = Encoding.UTF8.GetBytes(res);
+		resp.ContentLength64 = buffer.Length;
+
+		using Stream ros = resp.OutputStream;
+		ros.Write(buffer, 0, buffer.Length);
+	}
+
+	public void listenOnce() {
+		if(listener is null) {
+			return;
+		}
+		HttpListenerContext context = listener.GetContext();
+		handleRequest(context);
+	}
+
+	async public void listenOnceAsync() {
+		if(listener is null) {
+			return;
+		}
+		HttpListenerContext context = await listener.GetContextAsync();
+		handleRequest(context);
+	}
+
+	void listenLoop() {
+		if (LogFilepath != null && LogFilepath != "")
+		{
+			File.OpenWrite
