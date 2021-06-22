@@ -145,3 +145,26 @@ public class NetManager : MonoBehaviour {
 		// while (
 		// 	(networkEvents.Count > 0 && numIts == 0)
 		// 	|| (blockingListen && numIts < 10)
+		// 	|| (isDedicated && numIts == 0)
+		// ) {
+		if(networkEvents.Count > 0 || blockingListen || isDedicated) {
+			NetworkEvent networkEvent = networkEvents.Take();
+			networkEvent.serverReply = JsonRpcProcessor.ProcessSync(
+				Handler.DefaultSessionId(), networkEvent.clientRequest, null);
+			networkEvent.serverReplied.Set();
+			numIts += 1;
+		}
+	}
+
+	void handleRequest(HttpListenerContext context) {
+		HttpListenerRequest req = context.Request;
+
+		string bodyText;
+		using(var reader = new StreamReader(req.InputStream, req.ContentEncoding)) {
+			bodyText = reader.ReadToEnd();
+		}
+
+		NetworkEvent networkEvent = new NetworkEvent(bodyText);
+		networkEvents.Add(networkEvent);
+		networkEvent.serverReplied.WaitOne();
+		s
