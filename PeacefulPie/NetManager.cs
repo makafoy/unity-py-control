@@ -198,4 +198,29 @@ public class NetManager : MonoBehaviour {
 	void listenLoop() {
 		if (LogFilepath != null && LogFilepath != "")
 		{
-			File.OpenWrite
+			File.OpenWrite(LogFilepath).Close();
+		}
+		while(true) {
+			try {
+				listenOnce();
+			} catch(ObjectDisposedException) {
+				MyDebug("objectdisposedexception");
+				MyDebug($"isEnabled {isEnabled}");
+				if(isEnabled) {
+					MyDebug("Looks like we are supposed to be still active. Lets reopen...");
+					try {
+						if(listener != null) {
+							listener.Abort();
+						}
+					} catch(Exception e) {
+						MyDebug($"exception during attempted abort {e}");
+						MyDebug($"(Ignoring exception))");
+					}
+					try {
+						listener = new HttpListener();
+						listener.Prefixes.Add($"http://{ListenAddress}:{ListenPort}/");
+
+						listener.Start();
+						MyDebug($"Restarted listener");
+					} catch(Exception e) {
+						MyDebug($"error when trying 
