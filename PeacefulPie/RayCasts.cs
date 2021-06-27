@@ -47,4 +47,25 @@ public class RayCasts : MonoBehaviour {
 	}
 
 	Vector3 RayDirection(int xIdx, int yIdx) {
-		float x_angle = XResolution > 1 ? XTotalAngle / (XResolution - 1.0f) * xIdx - XTotalAn
+		float x_angle = XResolution > 1 ? XTotalAngle / (XResolution - 1.0f) * xIdx - XTotalAngle / 2.0f : 0;
+		float y_angle = YResolution > 1 ? YTotalAngle / (YResolution - 1.0f) * yIdx - YTotalAngle / 2.0f : 0;
+		Vector3 vec = Quaternion.Euler(y_angle, x_angle, 0) * Vector3.forward;
+		return vec;
+	}
+
+	void OnDrawGizmosSelected() {
+		if(!ShowRaysInEditor) {
+			return;
+		}
+		HashSet<string> tagsSet = new HashSet<string>();
+		foreach(string tag in DetectableTags) {
+			tagsSet.Add(tag);
+		}
+		for(int x_idx = 0; x_idx < XResolution; x_idx++) {
+			for(int y_idx = 0; y_idx < YResolution; y_idx++) {
+				Vector3 vec = RayDirection(x_idx, y_idx);
+				RaycastHit hit;
+				Gizmos.color = new Color(1, 0, 0, 0.75f);
+				if(SingleCast(vec, out hit)) {
+					if(tagsSet.Contains(hit.collider.gameObject.tag)) {
+						Gizmos
