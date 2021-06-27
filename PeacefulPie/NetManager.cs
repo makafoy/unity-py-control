@@ -223,4 +223,26 @@ public class NetManager : MonoBehaviour {
 						listener.Start();
 						MyDebug($"Restarted listener");
 					} catch(Exception e) {
-						MyDebug($"error when trying 
+						MyDebug($"error when trying to restart listener {e}");
+						throw e;
+					}
+				} else {
+					// shutdown
+					break;
+				}
+			} catch(System.Net.HttpListenerException e) {
+				if(e.Message == "Listener closed") {
+					MyDebug("listener closed");
+					break;
+				}
+				MyDebug($"HttpListenerException caught in httplistener {e}");
+			} catch(System.Threading.ThreadAbortException) {
+				MyDebug("threadabortexception");
+				break;
+			} catch(Exception e) {
+				MyDebug($"Exception caught in httplistener {e}");
+			}
+		}
+		MyDebug("ListenLoop shut down.");
+	}
+}
