@@ -68,4 +68,24 @@ public class RayCasts : MonoBehaviour {
 				Gizmos.color = new Color(1, 0, 0, 0.75f);
 				if(SingleCast(vec, out hit)) {
 					if(tagsSet.Contains(hit.collider.gameObject.tag)) {
-						Gizmos
+						Gizmos.color = new Color(0, 1, 0, 0.75f);
+						Gizmos.DrawRay(transform.position, transform.TransformDirection(vec) * hit.distance);
+					} else {
+						Gizmos.DrawRay(transform.position, transform.TransformDirection(vec) * hit.distance);
+					}
+				} else {
+					Gizmos.DrawRay(transform.position, transform.TransformDirection(vec) * RayLength);
+				}
+			}
+		}
+	}
+
+	bool SingleCast(Vector3 direction, out RaycastHit hit) {
+		if(RayRadius > 0) {
+			return Physics.SphereCast(transform.position, RayRadius, transform.TransformDirection(direction), out hit, RayLength);
+		} else {
+			return Physics.Raycast(transform.position, transform.TransformDirection(direction), out hit, RayLength);
+		}
+	}
+
+	void U
