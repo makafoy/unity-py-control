@@ -88,4 +88,27 @@ public class RayCasts : MonoBehaviour {
 		}
 	}
 
-	void U
+	void Update() {
+		if(!ShowRaysInPlayer) {
+			return;
+		}
+		for(int x_idx = 0; x_idx < XResolution; x_idx++) {
+			for(int y_idx = 0; y_idx < YResolution; y_idx++) {
+				Vector3 vec = RayDirection(x_idx, y_idx);
+				RaycastHit hit;
+				if(SingleCast(vec, out hit)) {
+					Debug.DrawRay(transform.position, transform.TransformDirection(vec) * hit.distance);
+				} else {
+					Debug.DrawRay(transform.position, transform.TransformDirection(vec) * RayLength);
+				}
+			}
+		}
+	}
+
+	public RayResults GetZerodObservation() {
+		// for use if agent is dead, for example
+		if(DetectableTags.Count == 0) {
+			throw new PeacefulPieException("You must provide at least one detectabletag when using RayCasts");
+		}
+		List<List<float>> rayDistances = new List<List<float>>();
+		List<List<int
