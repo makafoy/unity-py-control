@@ -133,4 +133,20 @@ public class RayCasts : MonoBehaviour {
 			throw new PeacefulPieException("You must provide at least one detectabletag when using RayCasts");
 		}
 		List<List<float>> rayDistances = new List<List<float>>();
-		List<List<int>> rayHitObjectTypes 
+		List<List<int>> rayHitObjectTypes = new List<List<int>>();
+		Dictionary<string, int> tagIdxByName = new Dictionary<string, int>();
+		for(int i = 0; i < DetectableTags.Count; i++) {
+			tagIdxByName[DetectableTags[i]] = i;
+		}
+		int NumObjectTypes = DetectableTags.Count;
+		for(int x_idx = 0; x_idx < XResolution; x_idx++) {
+			rayDistances.Add(new List<float>());
+			rayHitObjectTypes.Add(new List<int>());
+			for(int y_idx = 0; y_idx < YResolution; y_idx++) {
+				Vector3 vec = RayDirection(x_idx, y_idx);
+				RaycastHit hit;
+				if(SingleCast(vec, out hit)) {
+					string tag = hit.collider.gameObject.tag;
+					if(tagIdxByName.ContainsKey(tag)) {
+						rayDistances[x_idx].Add(hit.distance);
+						rayHitObjectTypes[x_idx].Add(tagIdxByName[tag])
