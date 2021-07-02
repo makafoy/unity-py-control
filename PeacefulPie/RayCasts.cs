@@ -149,4 +149,21 @@ public class RayCasts : MonoBehaviour {
 					string tag = hit.collider.gameObject.tag;
 					if(tagIdxByName.ContainsKey(tag)) {
 						rayDistances[x_idx].Add(hit.distance);
-						rayHitObjectTypes[x_idx].Add(tagIdxByName[tag])
+						rayHitObjectTypes[x_idx].Add(tagIdxByName[tag]);
+					} else {
+						rayDistances[x_idx].Add(-1);
+						rayHitObjectTypes[x_idx].Add(-1);
+					}
+				} else {
+					rayDistances[x_idx].Add(-1);
+					rayHitObjectTypes[x_idx].Add(-1);
+				}
+			}
+		}
+		return new RayResults(
+		    rayDistances,
+		    rayHitObjectTypes,
+		    NumObjectTypes
+		);
+	}
+}
