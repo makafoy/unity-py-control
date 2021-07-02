@@ -111,4 +111,26 @@ public class RayCasts : MonoBehaviour {
 			throw new PeacefulPieException("You must provide at least one detectabletag when using RayCasts");
 		}
 		List<List<float>> rayDistances = new List<List<float>>();
-		List<List<int
+		List<List<int>> rayHitObjectTypes = new List<List<int>>();
+		int NumObjectTypes = DetectableTags.Count;
+		for(int x_idx = 0; x_idx < XResolution; x_idx++) {
+			rayDistances.Add(new List<float>());
+			rayHitObjectTypes.Add(new List<int>());
+			for(int y_idx = 0; y_idx < YResolution; y_idx++) {
+				rayDistances[x_idx].Add(-1);
+				rayHitObjectTypes[x_idx].Add(-1);
+			}
+		}
+		return new RayResults(
+		    rayDistances,
+		    rayHitObjectTypes,
+		    NumObjectTypes
+		);
+	}
+
+	public RayResults GetObservation() {
+		if(DetectableTags.Count == 0) {
+			throw new PeacefulPieException("You must provide at least one detectabletag when using RayCasts");
+		}
+		List<List<float>> rayDistances = new List<List<float>>();
+		List<List<int>> rayHitObjectTypes 
