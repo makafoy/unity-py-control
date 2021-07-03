@@ -1,21 +1,25 @@
 
 fileFormatVersion: 2
-guid: 1a4b9dc81d687497caac7ac380e5acdd
+guid: 5803970ff94c74f61a1cd918fde282f3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Door
+    100004: Door.001
     400000: //RootNode
-    2100000: Cave_Out
-    2100002: Cave_In
-    2100004: Black
-    2100006: Brown
+    400002: Door
+    400004: Door.001
+    2100000: Brown
+    2100002: Black
     2300000: //RootNode
+    2300002: Door
+    2300004: Door.001
     3300000: //RootNode
-    4300000: Cave
-    4300002: Cave.001
-    4300004: Cave.002
-    4300006: Door
+    3300002: Door
+    3300004: Door.001
+    4300000: Door
+    4300002: Door.001
   externalObjects: {}
   materials:
     importMaterials: 1
