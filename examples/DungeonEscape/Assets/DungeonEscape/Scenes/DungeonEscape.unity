@@ -1052,3 +1052,21 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1166194417
 PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1098058649}
+    m_Modifications:
+    - target: {fileID: 100000, guid: f6ecb5c7cab484e639c060714bfd6d51, type: 3}
+      propertyPath: m_Name
+      value: ArenaWalls
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f6ecb5c7cab484e639c060714bfd6d51, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f6ecb5c7cab484e639c060714bfd6d51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15.371
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f6ecb5c7cab48
