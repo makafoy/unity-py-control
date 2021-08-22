@@ -1122,4 +1122,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 66163cf35956a4be08e801b750c26f33, type: 2}
     m_RemovedComponents: []
-  m_S
+  m_SourcePrefab: {fileID: 100100000, guid: f6ecb5c7cab484e639c060714bfd6d51, type: 3}
+--- !u!4 &1166194418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: f6ecb5c7cab484e639c060714bfd6d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1166194417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1177016901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177016902}
+  - component: {fileID: 1177016905}
+  - component: {fileID: 1177016904}
+  - component: {fileID: 1177016903}
+  m_Layer: 0
+  m_Name: Base
+  m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--
