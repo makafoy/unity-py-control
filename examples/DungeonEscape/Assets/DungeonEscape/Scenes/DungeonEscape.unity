@@ -2012,4 +2012,22 @@ PrefabInstance:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Modifi
+  m_Modification:
+    m_TransformParent: {fileID: 4006991767121726}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 1a4b9dc81d687497caac7ac380e5acdd, type: 3}
+      propertyPath: m_Name
+      value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1a4b9dc81d687497caac7ac380e5acdd, type: 3}
+      propertyPath: m_TagString
+      value: portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a4b9dc81d687497caac7ac380e5acdd, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1a4b9dc81d687497caac7ac380e5acdd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0007749
+      objectReference: {fileID:
