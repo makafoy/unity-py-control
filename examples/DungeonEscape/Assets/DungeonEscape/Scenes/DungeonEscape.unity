@@ -2199,4 +2199,29 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0d060d8c3074edf80fc69e847d4c60, type: 3}
   m_Name: 
-  m_Edi
+  m_EditorClassIdentifier: 
+  MaxEnvironmentSteps: 15000
+  areaBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  ground: {fileID: 1500989827241484}
+  AgentsList:
+  - Agent: {fileID: 8852485198556133608}
+    StartingPos: {x: 0, y: 0, z: 0}
+    StartingRot: {x: 0, y: 0, z: 0, w: 0}
+    Rb: {fileID: 0}
+    Col: {fileID: 0}
+  - Agent: {fileID: 4925928472197008310}
+    StartingPos: {x: 0, y: 0, z: 0}
+    StartingRot: {x: 0, y: 0, z: 0, w: 0}
+    Rb: {fileID: 0}
+    Col: {fileID: 0}
+  - Agent: {fileID: 5374649410477062858}
+    StartingPos: {x: 0, y: 0, z: 0}
+    StartingRot: {x: 0, y: 0, z: 0, w: 0}
+    Rb: {fileID: 0}
+    Col: {fileID: 0}
+  DragonsList:
+  - Agent: {fileID: 7252038608646948700}
+    StartingPos: {x: 0, y: 0, z: 0}
+    StartingRot: {x
