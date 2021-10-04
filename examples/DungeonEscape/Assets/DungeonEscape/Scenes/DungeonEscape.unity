@@ -2224,4 +2224,33 @@ MonoBehaviour:
   DragonsList:
   - Agent: {fileID: 7252038608646948700}
     StartingPos: {x: 0, y: 0, z: 0}
-    StartingRot: {x
+    StartingRot: {x: 0, y: 0, z: 0, w: 0}
+    Rb: {fileID: 0}
+    Col: {fileID: 0}
+    T: {fileID: 0}
+    IsDead: 0
+  UseRandomAgentRotation: 1
+  UseRandomAgentPosition: 1
+  Key: {fileID: 6560354527844713900}
+  Tombstone: {fileID: 6108088255477627722}
+  Reward: 0
+  EpisodeFinished: 0
+  AIEngaged: 0
+--- !u!1 &1500989827241484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4643237306651462}
+  - component: {fileID: 33737550909034830}
+  - component: {fileID: 23549421650749184}
+  - component: {fileID: 65513348977777878}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEd
