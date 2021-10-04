@@ -2253,4 +2253,31 @@ GameObject:
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEd
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1948184009346040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4662885882913466}
+  - component: {fileID: 33923598130255660}
+  - component: {fileID: 23386727929182930}
+  - component: {fileID: 65537430658362348}
+  - component: {fileID: 65603920768361500}
+  - component: {fileID: 65701991172503286}
+  - component: {fileID: 65220628763772278}
+  m_Layer: 0
+  m_Name: WallsOuter
+  m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4006991767121726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {
