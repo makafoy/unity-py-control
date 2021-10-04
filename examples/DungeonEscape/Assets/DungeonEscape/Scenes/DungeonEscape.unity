@@ -2280,4 +2280,25 @@ GameObject:
 --- !u!4 &4006991767121726
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125451440611342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6560354527844713898}
+  - {fileID: 8852485198556133607}
+  - {fileID: 4925928472197008309}
+  - {fileID: 5374649410477062857}
+  - {fileID: 4643237306651462}
+  - {fileID: 4662885882913466}
+  - {fileID: 7252038608646948701}
+  - {fileID: 8425016721265658890}
+  - {fileID: 1764900712290759426}
+  - {fileID: 759032957737702861}
+  - {fileID: 8949286965479989859}
+  - {fileID: 1611530199615319615}
+  - {fileID: 1900
