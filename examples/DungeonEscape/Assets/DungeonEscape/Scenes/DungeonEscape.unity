@@ -2327,4 +2327,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125451440611342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6
+  m_Script: {fileID: 11500000, guid: 60bad2c127164474b92369ed3b9d285e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4006991767121729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125451440611342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1971577372, guid: 666d74f9aa424489b9b7bd10aadc7bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimulationStepSize: 0.02
+  RealStepSize: 0.005
+  ApplyRealStepSize: 0
+  DedicatedRealStepSize: 0.0001
+  DedicatedTargetFrameRate: 10
+  AutoRunSimulations: 0
+--- !u!114 &4006991767121730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {f
