@@ -2351,4 +2351,27 @@ MonoBehaviour:
 --- !u!114 &4006991767121730
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {f
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125451440611342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -294509474, guid: 666d74f9aa424489b9b7bd10aadc7bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenPort: 9000
+  ListenAddress: localhost
+  LogFilepath: /tmp/netmanager.log
+  SleepAfterLogLineMilliseconds: 100
+  AutoEnableRunInBackground: 1
+--- !u!4 &4643237306651462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500989827241484}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0.00000030517577}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0
