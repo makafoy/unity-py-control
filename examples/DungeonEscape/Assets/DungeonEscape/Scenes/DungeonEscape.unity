@@ -2871,4 +2871,29 @@ Transform:
   m_LocalScale: {x: 0.2471312, y: 0.25136903, z: 0.26428065}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father:
+  m_Father: {fileID: 7252038608646948701}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 1.5790001}
+--- !u!114 &1534764537300190944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252038608646948702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df05ec10e50114a9d92106879d04d89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: portal
+  onTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerStayEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionEnt
