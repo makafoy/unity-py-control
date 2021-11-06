@@ -3018,4 +3018,26 @@ PrefabInstance:
       value: Column (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 69a64861a32794a5db3bcea0cae3
+  m_SourcePrefab: {fileID: 100100000, guid: 69a64861a32794a5db3bcea0cae3bef2, type: 3}
+--- !u!4 &1764900712290759426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1764900712290759425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &1937572949887305397
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868531848231823922}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1997013027164921575
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653887333523577426}
+  m_Enabled
