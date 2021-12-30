@@ -4471,4 +4471,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4006991767121726}
     m_Modifications:
-    - target: {fileID: 4796904010917588665, guid: f3c5280e4ae094a9a9b8b67
+    - target: {fileID: 4796904010917588665, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 11400000, guid: b56a13a0e996e4f719001b218cb87d5a,
+        type: 3}
+    - target: {fileID: 4796904010917588665, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828233698206621445, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_Name
+      value: DungeonEscapeAgent (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830954159424380931, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483095415942438093
