@@ -4722,4 +4722,29 @@ MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159925794936798520}
+  m_Mesh: {fileID: 4300000, guid: 09e2da39770c24cc9a71e5dbf05a1e85, type: 3}
+--- !u!23 &6051006134017041817
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939664103722983382}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 52eab8ab5010f438fab93da85735ba1d, type: 2}
+  m_StaticBatchInfo:
+    fi
