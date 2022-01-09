@@ -4773,4 +4773,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVers
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611530199615319615}
+  m_Layer: 0
+  m_Name: TombStone
+  m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &6126132964558562449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3907063013662158616}
+  - component: {fileID: 8762738934822574040}
+  - component: {fileID: 7319163965595667304}
+  m_Layer: 0
+  m_Name: symbol_tri (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &6159925794936798520
+GameObject:
+  m_ObjectHideF
