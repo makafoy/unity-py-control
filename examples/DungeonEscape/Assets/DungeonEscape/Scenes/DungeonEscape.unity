@@ -5211,4 +5211,30 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -6.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsS
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7651751396876580305}
+  - {fileID: 6560354527778907279}
+  - {fileID: 6560354528590888229}
+  - {fileID: 6560354527418038200}
+  - {fileID: 4799095849113777393}
+  m_Father: {fileID: 4006991767121726}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6560354527844713900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6560354527844713898}
+  - component: {fileID: 6560354527844713901}
+  - component: {fileID: 3288169921762018351}
+  m_Layer: 0
+  m_Name: Key
+  m_TagString: key
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_S
