@@ -5413,4 +5413,32 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.327, y: -0.104, z: 0}
   m_LocalScale: {x: 0.09221716, y: 0.22793984, z: 0.021225972}
-  m_Constrai
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6560354527844713898}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6653887333523577426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445200373203492814}
+  - component: {fileID: 4017737811639367444}
+  - component: {fileID: 1997013027164921575}
+  m_Layer: 0
+  m_Name: symbol_tri (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &7153329022282160022
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsse
