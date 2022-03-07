@@ -5567,4 +5567,32 @@ GameObject:
   m_Component:
   - component: {fileID: 7252038608646948701}
   - component: {fileID: 7252038608646948698}
-  -
+  - component: {fileID: 7252038608646948699}
+  - component: {fileID: 7252038608646948700}
+  - component: {fileID: 1534764537300190944}
+  m_Layer: 0
+  m_Name: Dragon
+  m_TagString: dragon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7252038609341978016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7252038609341978047}
+  - component: {fileID: 7252038609341978045}
+  - component: {fileID: 7252038609341978046}
+  m_Layer: 0
+  m_Name: eye
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !
