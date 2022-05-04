@@ -6072,4 +6072,29 @@ Transform:
 --- !u!1 &7654989526409686444
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {f
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7651751396378601718}
+  - component: {fileID: 7658811988607919192}
+  - component: {fileID: 7668487684316762214}
+  m_Layer: 0
+  m_Name: symbol_circle
+  m_TagString: key
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7654989528040452235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7651751396876580305}
+  - component: {fileID: 7658811986966870399}
+  - component: {fileID: 76684876827534
