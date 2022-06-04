@@ -6365,4 +6365,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7252038608646948701}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: -15.378}
+--- !u!33 &8251183886326753317
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736952483599615680}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &8371240578738090560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4283749283875204985}
+  - component: {fileID: 3055684985659229344}
+  - component: {fileID: 1263655781710548354}
+  - component: {fileID: 2889862189659706478}
+  m_Layer: 0
+  m_Name: Base
+  m_TagString: wall
