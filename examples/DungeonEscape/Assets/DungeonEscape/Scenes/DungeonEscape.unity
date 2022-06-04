@@ -6389,3 +6389,27 @@ GameObject:
   m_Layer: 0
   m_Name: Base
   m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1001 &8425016721265658889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4006991767121726}
+    m_Modifications:
+    - target: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
+        type: 3}
+      propertyPath: m
