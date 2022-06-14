@@ -6453,4 +6453,23 @@ PrefabInstance:
     - target: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184265935082300294, guid: 69a64861a32794a5db3bcea0cae3bef2,
+        type: 3}
+      propertyPath: m_Name
+      value: Column (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69a64861a32794a5db3bcea0cae3bef2, type: 3}
+--- !u!4 &8425016721265658890 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 390460369537414899, guid: 69a64861a32794a5db3bcea0cae3bef2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8425016721265658889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8663450623294010837
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstanc
