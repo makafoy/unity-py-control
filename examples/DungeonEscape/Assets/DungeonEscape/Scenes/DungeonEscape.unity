@@ -6494,3 +6494,23 @@ PrefabInstance:
     - target: {fileID: 4828233698206621445, guid: f3c5280e4ae094a9a9b8b6702630c941,
         type: 3}
       propertyPath: m_Name
+      value: DungeonEscapeAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830954159424380931, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830954159424380931, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830954159424380931, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830954159424380931, guid: f3c5280e4ae094a9a9b8b6702630c941,
+        type: 3}
+      propertyP
