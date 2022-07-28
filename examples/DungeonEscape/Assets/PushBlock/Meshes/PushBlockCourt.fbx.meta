@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c639386c12f5f7841892163a199dfacc
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: GoalArea
+    100002: Ground
+    100004: //RootNode
+    100006: WallsOuter
+    400000: GoalArea
+    400002: Ground
+    400004: //RootNode
+    400006: WallsOuter
+    2100000
