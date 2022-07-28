@@ -198,3 +198,154 @@ public class DungeonEscapeEnvController : MonoBehaviour, INeedFixedUpdate
         var foundNewSpawnLocation = false;
         var randomSpawnPos = Vector3.zero;
         while (foundNewSpawnLocation == false)
+        {
+            var randomPosX = Random.Range(-areaBounds.extents.x * m_PushBlockSettings.spawnAreaMarginMultiplier,
+                areaBounds.extents.x * m_PushBlockSettings.spawnAreaMarginMultiplier);
+
+            var randomPosZ = Random.Range(-areaBounds.extents.z * m_PushBlockSettings.spawnAreaMarginMultiplier,
+                areaBounds.extents.z * m_PushBlockSettings.spawnAreaMarginMultiplier);
+            randomSpawnPos = ground.transform.position + new Vector3(randomPosX, 1f, randomPosZ);
+            if (Physics.CheckBox(randomSpawnPos, new Vector3(2.5f, 0.01f, 2.5f)) == false)
+            {
+                foundNewSpawnLocation = true;
+            }
+        }
+        return randomSpawnPos;
+    }
+
+    /// <summary>
+    /// Swap ground material, wait time seconds, then swap back to the regular material.
+    /// </summary>
+    IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time)
+    {
+        m_GroundRenderer.material = mat;
+        yield return new WaitForSeconds(time); // Wait for 2 sec
+        m_GroundRenderer.material = m_GroundMaterial;
+    }
+
+    public void BaddieTouchedBlock()
+    {
+        // Swap ground material for a bit to indicate we scored.
+        StartCoroutine(GoalScoredSwapGroundMaterial(m_PushBlockSettings.failMaterial, 0.5f));
+        Debug.Log("dragon won 🐲");
+        // Reward -= 1;
+        EndEpisode();
+        // ResetScene();
+    }
+
+    Quaternion GetRandomRot()
+    {
+        return Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+    }
+
+    // public void ApplyActions(List<PlayerAction> actions, float rlDeltaTime) {
+    public void Step(List<PlayerAction> actions, float rlDeltaTime)
+    {
+        for (int i = 0; i < AgentsList.Count; i++)
+        {
+            PlayerInfo playerInfo = AgentsList[i];
+            playerInfo.Agent.ApplyAction(actions[i], rlDeltaTime);
+        }
+    }
+
+    public RLResult GetRLResult()
+    {
+        // RunFixedUpdates(rlDeltaTime);
+        List<PlayerObservation> observations = GetObservations();
+        RLResult res = new RLResult(
+            Reward,
+            EpisodeFinished,
+            observations
+        );
+        if (res.reward > 0)
+        {
+            Debug.Log($"reward {res.reward} 🏆");
+        }
+        if (res.reward < -0.1)
+        {
+            Debug.Log($"reward {res.reward}");
+        }
+        Reward = 0;
+        return res;
+    }
+
+    List<PlayerObservation> GetObservations()
+    {
+        List<PlayerObservation> playerObservations = new List<PlayerObservation>();
+        for (int i = 0; i < AgentsList.Count; i++)
+        {
+            PlayerInfo playerInfo = AgentsList[i];
+            PlayerObservation obs;
+            if (playerInfo.Agent.gameObject.activeSelf)
+            {
+                obs = playerInfo.Agent.GetObservation();
+            }
+            else
+            {
+                obs = playerInfo.Agent.GetDeadObservation();
+            }
+            playerObservations.Add(obs);
+        }
+        return playerObservations;
+    }
+
+    public RLResult Reset()
+    {
+        // Debug.Log("New game 🎮");
+        Debug.Log("-------------- New game 🎮 ------------------");
+        ResetScene();
+        return new RLResult(
+            0,
+            EpisodeFinished,
+            GetObservations()
+        );
+    }
+
+    void ResetScene()
+    {
+        //Reset counter
+        m_ResetTimer = 0;
+        Reward = 0;
+        EpisodeFinished = false;
+
+        //Reset Players Remaining
+        m_NumberOfRemainingPlayers = AgentsList.Count;
+
+        //Random platform rot
+        var rotation = Random.Range(0, 4);
+        var rotationAngle = rotation * 90f;
+        transform.Rotate(new Vector3(0f, rotationAngle, 0f));
+
+        //Reset Agents
+        foreach (var item in AgentsList)
+        {
+            var pos = UseRandomAgentPosition ? GetRandomSpawnPos() : item.StartingPos;
+            var rot = UseRandomAgentRotation ? GetRandomRot() : item.StartingRot;
+
+            item.Agent.transform.SetPositionAndRotation(pos, rot);
+            item.Rb.velocity = Vector3.zero;
+            item.Rb.angularVelocity = Vector3.zero;
+            item.Agent.MyKey.SetActive(false);
+            item.Agent.IHaveAKey = false;
+            item.Agent.gameObject.SetActive(true);
+        }
+
+        //Reset Key
+        Key.SetActive(false);
+
+        //Reset Tombstone
+        Tombstone.SetActive(false);
+
+        //End Episode
+        foreach (var item in DragonsList)
+        {
+            if (!item.Agent)
+            {
+                return;
+            }
+            item.Agent.transform.SetPositionAndRotation(item.StartingPos, item.StartingRot);
+            item.Agent.SetRandomWalkSpeed();
+            item.Agent.gameObject.SetActive(true);
+        }
+    }
+}
