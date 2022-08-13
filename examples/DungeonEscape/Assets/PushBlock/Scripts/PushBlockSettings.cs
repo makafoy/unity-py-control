@@ -29,4 +29,7 @@ public class PushBlockSettings : MonoBehaviour
 
     /// <summary>
     /// When an agent fails, the ground will turn this material for a few seconds.
-    /// </su
+    /// </summary>
+    public Material failMaterial;
+
+}
