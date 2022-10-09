@@ -40,3 +40,43 @@ Shader "Custom/Outline and ScreenSpace texture"
 
 				// Convert normal to view space (camera space)
 				float3 normal = mul((float3x3) UNITY_MATRIX_IT_MV, v.normal);
+
+				// Compute normal value in clip space
+				normal.x *= UNITY_MATRIX_P[0][0];
+				normal.y *= UNITY_MATRIX_P[1][1];
+
+				// Scale the model depending the previous computed normal and outline value
+				o.pos.xy += _OutlineVal * normal.xy;
+				return o;
+			}
+
+			fixed4 _OutlineCol;
+
+			fixed4 frag(v2f i) : SV_Target {
+				return _OutlineCol;
+			}
+
+			ENDCG
+		}
+
+		Pass
+		{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+
+			float4 vert(appdata_base v) : SV_POSITION
+			{
+				return UnityObjectToClipPos(v.vertex);
+			}
+
+			sampler2D _MainTex;
+			float _Zoom;
+			float _SpeedX;
+			float _SpeedY;
+
+			fixed4 frag(float4 i : VPOS) : SV_Target
+			{
+				// Screen space texture
+				return tex2D(_MainTex, ((i.xy / _ScreenParams.xy) 
