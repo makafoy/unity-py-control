@@ -18,4 +18,35 @@
 		float _ParcelSize;
 
 		struct Input {
-			f
+			float2 uv_MainTex;
+			float3 worldPos;
+		};
+
+		void surf (Input IN, inout SurfaceOutput o) {
+			half val1 = step(_LineWidth * 2, frac(IN.worldPos.x / _ParcelSize) + _LineWidth);
+			half val2 = step(_LineWidth * 2, frac(IN.worldPos.z / _ParcelSize) + _LineWidth);
+			fixed val = 1 - (val1 * val2);
+			o.Albedo = lerp(_MainColor, _LineColor, val);
+			o.Alpha = 1;
+		}
+		ENDCG
+	} 
+	FallBack "Diffuse"
+}
+
+// //Shader uses screen-space partial derivatives, works the best with terrain meshes.
+
+// Shader "Wireframe"
+// {
+// 	Properties
+// 	{
+// 		[Header(Settings)] [Toggle] _transparency ("Transparency", Float) = 1					
+// 	}
+// 	Subshader
+// 	{
+// 		Pass
+// 		{
+// 			Cull Off
+// 			CGPROGRAM
+// 			#pragma vertex vertex_shader
+// 			#pragma fragment pixel_shad
