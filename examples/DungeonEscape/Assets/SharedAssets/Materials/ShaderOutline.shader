@@ -79,4 +79,10 @@ Shader "Custom/Outline and ScreenSpace texture"
 			fixed4 frag(float4 i : VPOS) : SV_Target
 			{
 				// Screen space texture
-				return tex2D(_MainTex, ((i.xy / _ScreenParams.xy) 
+				return tex2D(_MainTex, ((i.xy / _ScreenParams.xy) + float2(_Time.y * _SpeedX, _Time.y * _SpeedY)) / _Zoom);
+			}
+
+			ENDCG
+		}
+	}
+}
