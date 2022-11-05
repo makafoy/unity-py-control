@@ -1,4 +1,33 @@
 fileFormatVersion: 2
 guid: d42ce640bd273f14fb3076ec3bcd8a1b
 ModelImporter:
-  serializedVersion
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2100000: rep_Agent
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: AgentCube
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rep_Agent
+    second: {fileID: 2100000, guid: f859518a4aa8c174db3ca5689255bcf6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationR
