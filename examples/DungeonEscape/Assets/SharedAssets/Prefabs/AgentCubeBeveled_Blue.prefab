@@ -52,4 +52,32 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 417
+  - component: {fileID: 4175896932575662}
+  - component: {fileID: 33269822547088274}
+  - component: {fileID: 23907787550355692}
+  m_Layer: 0
+  m_Name: AgentCubeBeveled_Blue
+  m_TagString: agent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1806423283302662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4936920867986940}
+  - component: {fileID: 33814817293145276}
+  - component: {fileID: 23166788082436108}
+  m_Layer: 0
+  m_Name: eye
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1887066189354012
+GameObj
