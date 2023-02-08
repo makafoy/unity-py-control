@@ -20,4 +20,27 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &224796324260922368
 RectTransform:
-  m_ObjectHideFlag
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508578353888260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3300893, y: 0.3300892, z: 0.3300892}
+  m_Children: []
+  m_Father: {fileID: 224194346362733190}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -209, y: -116}
+  m_SizeDelta: {x: 715.7, y: 715.69995}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222875034646499690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15085783538
