@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 33960811207869758}
   - component: {fileID: 23396971507563632}
   m_Layer: 0
-  m_Name: Logo-PlaneMesh-BLACK
+  m_Name: Logo-PlaneMesh-GRAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
