@@ -37,4 +37,30 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4163221487120766}
-  - component: {fileID: 33
+  - component: {fileID: 33532750285307344}
+  - component: {fileID: 23997787767704046}
+  m_Layer: 0
+  m_Name: symbol_circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4163221487120766
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492439455937572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.33826}
+  m_LocalScale: {x: 0.37466624, y: 0.38109082, z: 1.3355573}
+  m_Children: []
+  m_Father: {fileID: 4965201289082674}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4965201289082674
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_Pref
