@@ -12,4 +12,29 @@ Prefab:
   m_RootGameObject: {fileID: 1147101126618602}
   m_IsPrefabParent: 1
 --- !u!1 &1147101126618602
-GameO
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4134156155830030}
+  - component: {fileID: 33781785803569660}
+  - component: {fileID: 65535238649650828}
+  - component: {fileID: 23435667802952786}
+  m_Layer: 0
+  m_Name: Symbol_X
+  m_TagString: symbol_X
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1800632560103032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4247497194682288}
+  - component: {fileID: 3344590190
