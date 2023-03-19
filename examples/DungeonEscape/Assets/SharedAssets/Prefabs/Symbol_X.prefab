@@ -37,4 +37,30 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4247497194682288}
-  - component: {fileID: 3344590190
+  - component: {fileID: 33445901905875220}
+  - component: {fileID: 23052055968543938}
+  m_Layer: 0
+  m_Name: symbol_x
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4134156155830030
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147101126618602}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7, y: 2.45, z: 24.7}
+  m_LocalScale: {x: 4.08117, y: 4.01236, z: 1.1449}
+  m_Children:
+  - {fileID: 4247497194682288}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4247497194682288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID
