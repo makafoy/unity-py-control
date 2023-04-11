@@ -25,4 +25,19 @@ namespace Unity.MLAgentsExamples
         //        public float spawnRadius; //The radius in which a target can be randomly spawned.
         //        public bool respawnIfTouched; //Should the target respawn to a different position when touched
         //
-        //        [Header("Tar
+        //        [Header("Target Fell Protection")]
+        //        public bool respawnIfFallsOffPlatform = true; //If the target falls off the platform, reset the position.
+        //        public float fallDistance = 5; //distance below the starting height that will trigger a respawn
+        //
+        //
+        //        private Vector3 m_startingPos; //the starting position of the target
+        //        private Agent m_agentTouching; //the agent currently touching the target
+
+        [System.Serializable]
+        //        public class TriggerEvent : UnityEvent<string>
+        public class TriggerEvent : UnityEvent<Collider>
+        {
+        }
+
+        [Header("Trigger Callbacks")]
+        public TriggerEvent onTriggerEnterEvent = new 
