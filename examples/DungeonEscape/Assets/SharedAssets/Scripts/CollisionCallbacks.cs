@@ -40,4 +40,22 @@ namespace Unity.MLAgentsExamples
         }
 
         [Header("Trigger Callbacks")]
-        public TriggerEvent onTriggerEnterEvent = new 
+        public TriggerEvent onTriggerEnterEvent = new TriggerEvent();
+        public TriggerEvent onTriggerStayEvent = new TriggerEvent();
+        public TriggerEvent onTriggerExitEvent = new TriggerEvent();
+
+        [System.Serializable]
+        public class CollisionEvent : UnityEvent<Collision, Transform>
+        {
+        }
+
+        [Header("Collision Callbacks")]
+        public CollisionEvent onCollisionEnterEvent = new CollisionEvent();
+        public CollisionEvent onCollisionStayEvent = new CollisionEvent();
+        public CollisionEvent onCollisionExitEvent = new CollisionEvent();
+
+        //        // Start is called before the first frame update
+        //        void OnEnable()
+        //        {
+        //            m_startingPos = transform.position;
+        //        
