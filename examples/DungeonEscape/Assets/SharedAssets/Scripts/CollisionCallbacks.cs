@@ -58,4 +58,25 @@ namespace Unity.MLAgentsExamples
         //        void OnEnable()
         //        {
         //            m_startingPos = transform.position;
-        //        
+        //            if (respawnIfTouched)
+        //            {
+        //                MoveTargetToRandomPosition();
+        //            }
+        //        }
+
+        //        void Update()
+        //        {
+        //            if (respawnIfFallsOffPlatform)
+        //            {
+        //                if (transform.position.y < m_startingPos.y - fallDistance)
+        //                {
+        //                    Debug.Log($"{transform.name} Fell Off Platform");
+        //                    MoveTargetToRandomPosition();
+        //                }
+        //            }
+        //        }
+
+        //        /// <summary>
+        //        /// Moves target to a random position within specified radius.
+        //        /// </summary>
+        /
