@@ -79,4 +79,23 @@ namespace Unity.MLAgentsExamples
         //        /// <summary>
         //        /// Moves target to a random position within specified radius.
         //        /// </summary>
-        /
+        //        public void MoveTargetToRandomPosition()
+        //        {
+        //            var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
+        //            newTargetPos.y = m_startingPos.y;
+        //            transform.position = newTargetPos;
+        //        }
+
+        private void OnCollisionEnter(Collision col)
+        {
+            if (col.transform.CompareTag(tagToDetect))
+            {
+                onCollisionEnterEvent.Invoke(col, transform);
+                //                if (respawnIfTouched)
+                //                {
+                //                    MoveTargetToRandomPosition();
+                //                }
+            }
+        }
+
+        private voi
