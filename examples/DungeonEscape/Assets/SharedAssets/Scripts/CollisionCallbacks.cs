@@ -126,4 +126,16 @@ namespace Unity.MLAgentsExamples
         {
             if (col.CompareTag(tagToDetect))
             {
-                onTr
+                onTriggerStayEvent.Invoke(col);
+            }
+        }
+
+        private void OnTriggerExit(Collider col)
+        {
+            if (col.CompareTag(tagToDetect))
+            {
+                onTriggerExitEvent.Invoke(col);
+            }
+        }
+    }
+}
