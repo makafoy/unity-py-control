@@ -98,4 +98,32 @@ namespace Unity.MLAgentsExamples
             }
         }
 
-        private voi
+        private void OnCollisionStay(Collision col)
+        {
+            if (col.transform.CompareTag(tagToDetect))
+            {
+                onCollisionStayEvent.Invoke(col, transform);
+            }
+        }
+
+        private void OnCollisionExit(Collision col)
+        {
+            if (col.transform.CompareTag(tagToDetect))
+            {
+                onCollisionExitEvent.Invoke(col, transform);
+            }
+        }
+
+        private void OnTriggerEnter(Collider col)
+        {
+            if (col.CompareTag(tagToDetect))
+            {
+                onTriggerEnterEvent.Invoke(col);
+            }
+        }
+
+        private void OnTriggerStay(Collider col)
+        {
+            if (col.CompareTag(tagToDetect))
+            {
+                onTr
