@@ -21,4 +21,16 @@ namespace Unity.MLAgentsExamples
         public float gravityMultiplier = 1.0f;
 
         [Header("Advanced physics settings")]
-        [Tooltip("The maximum time a frame can take. Physics and other fixed frame rate updates (like MonoBehaviour's FixedUpdate) will be perform
+        [Tooltip("The maximum time a frame can take. Physics and other fixed frame rate updates (like MonoBehaviour's FixedUpdate) will be performed only for this duration of time per frame.")]
+        public float maximumDeltaTime = 1.0f / 3.0f;
+        [Tooltip("Determines how accurately Rigidbody joints and collision contacts are resolved. (default 6). Must be positive.")]
+        public int solverIterations = 6;
+        [Tooltip("Affects how accurately the Rigidbody joints and collision contacts are resolved. (default 1). Must be positive.")]
+        public int solverVelocityIterations = 1;
+        [Tooltip("Determines whether the garbage collector should reuse only a single instance of a Collision type for all collision callbacks. Reduces Garbage.")]
+        public bool reuseCollisionCallbacks = true;
+
+        public void Awake()
+        {
+            // Save the original values
+            m_OriginalGrav
