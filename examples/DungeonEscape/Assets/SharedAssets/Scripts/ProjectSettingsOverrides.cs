@@ -33,4 +33,20 @@ namespace Unity.MLAgentsExamples
         public void Awake()
         {
             // Save the original values
-            m_OriginalGrav
+            m_OriginalGravity = Physics.gravity;
+            m_OriginalMaximumDeltaTime = Time.maximumDeltaTime;
+            m_OriginalSolverIterations = Physics.defaultSolverIterations;
+            m_OriginalSolverVelocityIterations = Physics.defaultSolverVelocityIterations;
+            m_OriginalReuseCollisionCallbacks = Physics.reuseCollisionCallbacks;
+
+            // Override
+            Physics.gravity *= gravityMultiplier;
+            Time.maximumDeltaTime = maximumDeltaTime;
+            Physics.defaultSolverIterations = solverIterations;
+            Physics.defaultSolverVelocityIterations = solverVelocityIterations;
+            Physics.reuseCollisionCallbacks = reuseCollisionCallbacks;
+        }
+
+        public void OnDestroy()
+        {
+            Physics.gravity = m_OriginalGravity;
