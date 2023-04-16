@@ -50,3 +50,10 @@ namespace Unity.MLAgentsExamples
         public void OnDestroy()
         {
             Physics.gravity = m_OriginalGravity;
+            Time.maximumDeltaTime = m_OriginalMaximumDeltaTime;
+            Physics.defaultSolverIterations = m_OriginalSolverIterations;
+            Physics.defaultSolverVelocityIterations = m_OriginalSolverVelocityIterations;
+            Physics.reuseCollisionCallbacks = m_OriginalReuseCollisionCallbacks;
+        }
+    }
+}
