@@ -3,4 +3,6 @@
 --- !u!1045 &1
 EditorBuildSettings:
   m_ObjectHideFlags: 0
-  seriali
+  serializedVersion: 2
+  m_Scenes: []
+  m_configObjects: {}
