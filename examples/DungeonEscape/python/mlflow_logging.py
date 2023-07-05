@@ -33,4 +33,22 @@ class MLFlowLogger(KVWriter):
 
         try:
             # check we are in a repo
-            subprocess.check_output(["git", "status"], stderr=subproces
+            subprocess.check_output(["git", "status"], stderr=subprocess.STDOUT)
+            gitdiff = subprocess.check_output(["git", "diff"]).decode("utf-8")
+            gitlog = subprocess.check_output(["git", "log", "-n", "3"]).decode("utf-8")
+            with open("gitdiff.txt", "w") as f:
+                f.write(gitdiff)
+            with open("gitlog.txt", "w") as f:
+                f.write(gitlog)
+        except Exception:
+            with open("gitdiff.txt") as f:
+                gitdiff = f.read()
+            with open("gitlog.txt") as f:
+                gitlog = f.read()
+        mlflow.log_artifact("gitdiff.txt")
+        mlflow.log_artifact("gitlog.txt")
+
+        params_to_log["hostname"] = socket.gethostname()
+        mlflow.log_params(params_to_log)
+
+    def log_args(self, args: a
