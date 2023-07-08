@@ -51,4 +51,25 @@ class MLFlowLogger(KVWriter):
         params_to_log["hostname"] = socket.gethostname()
         mlflow.log_params(params_to_log)
 
-    def log_args(self, args: a
+    def log_args(self, args: argparse.Namespace) -> None:
+        params = {f"args.{k}": v for k, v in args.__dict__.items()}
+        mlflow.log_params(params)
+
+    def upload_artifact(self, filepath: str) -> None:
+        mlflow.log_artifact(filepath)
+
+    def write(
+        self,
+        key_values: Dict[str, Any],
+        key_excluded: Dict[str, Union[str, Tuple[str, ...]]],
+        step: int = 0,
+    ) -> None:
+        metrics = {}
+        for (key, value), (_, excluded) in zip(
+            sorted(key_values.items()), sorted(key_excluded.items())
+        ):
+            if excluded is not None and "mlflow" in excluded:
+                continue
+
+            if isinstance(value, np.ScalarType):
+                if not isinstance(value,
