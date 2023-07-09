@@ -28,4 +28,19 @@ class MlflowLoader:
             os.makedirs(self.cache_dir)
 
         if mlflow_uri is None:
-            assert "MLFLO
+            assert "MLFLOW_TRACKING_URI" in os.environ
+            print("mlflow tracking uri", mlflow.get_tracking_uri())
+            self.mlflow_uri = os.environ["MLFLOW_TRACKING_URI"]
+        else:
+            self.mlflow_uri = mlflow_uri
+
+    def _get_checkpoint_cache_filename(self, run_name: str, run_iterations: int) -> str:
+        return f"{run_name}:{run_iterations}.zip"
+
+    def download_checkpoint(self, run_name: str, run_iterations: int) -> str:
+        """
+        Downloads a checkpoint from mlflow, given the run_name, and the number of
+        iterations of training prior to the checkpoint. For example, to download
+        ckp_1024.zip, then set run_iterations=1024.
+        """
+        cache_filename = self._get
