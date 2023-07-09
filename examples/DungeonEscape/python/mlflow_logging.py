@@ -72,4 +72,23 @@ class MLFlowLogger(KVWriter):
                 continue
 
             if isinstance(value, np.ScalarType):
-                if not isinstance(value,
+                if not isinstance(value, str):
+                    metrics[key] = value
+                    # mlflow.log_metric(key, value, step)
+        try:
+            mlflow.log_metrics(metrics=metrics, step=step)
+        except Exception as e:
+            print("warning: failed to log mlflow metrics, step", step)
+            print(e)
+            # otherwise ignore...
+
+    def close(self) -> None:
+        mlflow.end_run()
+
+
+def create_loggers(mlflow_logger: MLFlowLogger) -> Logger:
+    loggers = Logger(
+        folder=None,
+        output_formats=[HumanOutputFormat(sys.stdout), mlflow_logger],
+    )
+    return loggers
