@@ -43,4 +43,21 @@ class MlflowLoader:
         iterations of training prior to the checkpoint. For example, to download
         ckp_1024.zip, then set run_iterations=1024.
         """
-        cache_filename = self._get
+        cache_filename = self._get_checkpoint_cache_filename(
+            run_name=run_name, run_iterations=run_iterations
+        )
+        cache_filepath = join(self.cache_dir, cache_filename)
+        if os.path.exists(cache_filepath):
+            print(f"returning checkpoint from cache for {run_name}:{run_iterations}")
+            return cache_filepath
+        print("downloading checkpoint...")
+        run = self.get_run(run_name=run_name)
+        self.download_artifact(
+            run=run, artifact_path=f"ckp_{run_iterations}.zip", dest_path=cache_filepath
+        )
+        return cache_filepath
+
+    def download_artifact(
+        self, run: mlflow.entities.Run, artifact_path: str, dest_path: Optional[str]
+    ) -> str:
+        client = mlflow.MlflowClient(tracking
