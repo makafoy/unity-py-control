@@ -60,4 +60,24 @@ class MlflowLoader:
     def download_artifact(
         self, run: mlflow.entities.Run, artifact_path: str, dest_path: Optional[str]
     ) -> str:
-        client = mlflow.MlflowClient(tracking
+        client = mlflow.MlflowClient(tracking_uri=self.mlflow_uri)
+        run_id = run.info.run_id
+        downloaded_path = None
+        while downloaded_path is None:
+            try:
+                downloaded_path = client.download_artifacts(
+                    run_id=run_id, path=artifact_path
+                )
+            except Exception as e:
+                print("exception downloading from mlflow", e)
+                print("trying again")
+                time.sleep(1)
+        if dest_path is not None:
+            shutil.move(downloaded_path, dest_path)
+            downloaded_path = dest_path
+        return downloaded_path
+
+    def get_run(self, run_name: str) -> mlflow.entities.Run:
+        """
+        Returns run with longest duration matching the experiment and run names
+        ""
