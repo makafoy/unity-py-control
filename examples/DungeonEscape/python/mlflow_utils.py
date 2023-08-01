@@ -99,4 +99,23 @@ class MlflowLoader:
                 runs = client.search_runs(
                     experiment_ids=[experiment_id],
                     filter_string=f"tags.mlflow.runName = '{run_name}'",
-          
+                )
+            except Exception as e:
+                print("exception", e, "whilst searching runs")
+                print("retrying")
+                time.sleep(1)
+        longest_run = None
+        longest_run_duration = None
+        for run in runs:
+            run_data: mlflow.entities.RunData = run.data
+            if run.info.end_time is None:
+                # assume that ongoing run is the one we want
+                longest_run = run
+                break
+            duration = datetime.datetime.fromtimestamp(
+                run.info.end_time / 1000
+            ) - datetime.datetime.fromtimestamp(run.info.start_time / 1000)
+            print(
+                "duration",
+                duration,
+                "ep_len_
