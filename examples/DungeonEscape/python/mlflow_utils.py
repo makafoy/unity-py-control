@@ -118,4 +118,10 @@ class MlflowLoader:
             print(
                 "duration",
                 duration,
-                "ep_len_
+                "ep_len_mean",
+                run_data.metrics.get("rollout/ep_len_mean", None),
+            )
+            if longest_run_duration is None or duration > longest_run_duration:
+                longest_run_duration = duration
+                longest_run = run
+        return longest_run
