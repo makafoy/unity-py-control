@@ -80,4 +80,23 @@ class MlflowLoader:
     def get_run(self, run_name: str) -> mlflow.entities.Run:
         """
         Returns run with longest duration matching the experiment and run names
-        ""
+        """
+        client = mlflow.MlflowClient(tracking_uri=self.mlflow_uri)
+        experiment_id = None
+        while experiment_id is None:
+            try:
+                experiment_id = client.get_experiment_by_name(
+                    self.experiment_name
+                ).experiment_id
+            except Exception as e:
+                print("exception", e, "whilst getting experiment id")
+                print("retrying")
+                time.sleep(1)
+        print("experiment_id", experiment_id)
+        runs = None
+        while runs is None:
+            try:
+                runs = client.search_runs(
+                    experiment_ids=[experiment_id],
+                    filter_string=f"tags.mlflow.runName = '{run_name}'",
+          
