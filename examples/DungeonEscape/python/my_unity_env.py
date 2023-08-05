@@ -81,4 +81,8 @@ class MyUnityEnv(gym.Env):
             actions=action_strs, ResultClass=RLResult
         )
         obs = self._result_to_obs(rl_result)
-     
+        info: Dict[str, Any] = {"finished": rl_result.episodeFinished}
+        return obs, rl_result.reward, rl_result.episodeFinished, info
+
+    def close(self) -> None:
+        ...
