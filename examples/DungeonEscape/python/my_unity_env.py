@@ -39,4 +39,22 @@ class MyUnityEnv(gym.Env):
             low=0, high=1, shape=obs.shape, dtype=np.float32
         )
 
-    def r
+    def reset(self) -> NDArray[np.float32]:
+        rl_result: RLResult = self.comms.reset(ResultClass=RLResult)
+        obs = self._result_to_obs(rl_result)
+        return obs
+
+    def _player_observation_to_vec(
+        self, player_obs: PlayerObservation
+    ) -> NDArray[np.float32]:
+        """
+        Takes in a player observation, containing ray hits, and whether the player has a key,
+        and returns a single vector, representing both of those
+        """
+        vec = ray_results_helper.ray_results_to_feature_np(player_obs.rayResults)
+        res = np.concatenate(
+            [vec.flatten(), [player_obs.IAmAlive, player_obs.IHaveAKey]]
+        )
+        return res
+
+    def _result_to_obs(self, rl_result: RLResu
