@@ -57,4 +57,28 @@ class MyUnityEnv(gym.Env):
         )
         return res
 
-    def _result_to_obs(self, rl_result: RLResu
+    def _result_to_obs(self, rl_result: RLResult) -> NDArray[np.float32]:
+        return np.concatenate(
+            [
+                self._player_observation_to_vec(obs)
+                for obs in rl_result.playerObservations
+            ]
+        )
+
+    def step(
+        self, actions: List[int]
+    ) -> Tuple[NDArray[np.float32], float, bool, Dict[str, Any]]:
+        action_strs = [
+            [
+                "nop",
+                "rotateLeft",
+                "rotateRight",
+                "forward",
+            ][action]
+            for action in actions
+        ]
+        rl_result: RLResult = self.comms.rlStep(
+            actions=action_strs, ResultClass=RLResult
+        )
+        obs = self._result_to_obs(rl_result)
+     
