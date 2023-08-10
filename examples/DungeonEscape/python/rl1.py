@@ -57,4 +57,23 @@ def run(args: argparse.Namespace) -> None:
 
     # default policy network is:
     # policy ActorCriticPolicy(
-    #   
+    #   (features_extractor): FlattenExtractor(
+    #     (flatten): Flatten(start_dim=1, end_dim=-1)
+    #   )
+    #   (mlp_extractor): MlpExtractor(
+    #     (shared_net): Sequential()
+    #     (policy_net): Sequential(
+    #       (0): Linear(in_features=276, out_features=64, bias=True)
+    #       (1): Tanh()
+    #       (2): Linear(in_features=64, out_features=64, bias=True)
+    #       (3): Tanh()
+    #     )
+    #     (value_net): Sequential(
+    #       (0): Linear(in_features=276, out_features=64, bias=True)
+    #       (1): Tanh()
+    #       (2): Linear(in_features=64, out_features=64, bias=True)
+    #       (3): Tanh()
+    #     )
+    #   )
+    #   (action_net): Linear(in_features=64, out_features=12, bias=True)
+    #   (value_net): Linear(
