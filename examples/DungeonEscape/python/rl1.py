@@ -37,4 +37,24 @@ def run(args: argparse.Namespace) -> None:
             )
 
         def __call__(self) -> MyUnityEnv:
-            # I think this bit 
+            # I think this bit magically gets run in a different process
+            # UnityComms itself cannot be pickled, if it has started another server
+            # process, since the server process handle is not pickleable
+            my_unity_env = MyUnityEnv(comms=self.unity_comms)
+            return my_unity_env
+
+    env_factories = [
+        EnvFactory(port=port, server_executable_path=args.server_executable_path)
+        for port in args.ports
+    ]
+    my_env: Union[Env, VecEnv]
+    if len(args.ports) > 1:
+        my_env = SubprocVecEnv(env_fns=env_factories)  # type: ignore
+        my_env = VecMonitor(my_env)
+    else:
+        my_env = env_factories[0]()
+        my_env = Monitor(my_env)
+
+    # default policy network is:
+    # policy ActorCriticPolicy(
+    #   
