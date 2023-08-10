@@ -76,4 +76,24 @@ def run(args: argparse.Namespace) -> None:
     #     )
     #   )
     #   (action_net): Linear(in_features=64, out_features=12, bias=True)
-    #   (value_net): Linear(
+    #   (value_net): Linear(in_features=64, out_features=1, bias=True)
+    # )
+    policy_kwargs = {
+        "default": None,
+        "3x128:relu": dict(
+            activation_fn=torch.nn.ReLU,
+            net_arch=[dict(pi=[128, 128, 128], vf=[128, 128, 128])],
+        ),
+        "3x256:relu": dict(
+            activation_fn=torch.nn.ReLU,
+            net_arch=[dict(pi=[256, 256, 256], vf=[256, 256, 256])],
+        ),
+        "3x512:relu": dict(
+            activation_fn=torch.nn.ReLU,
+            net_arch=[dict(pi=[512, 512, 512], vf=[512, 512, 512])],
+        ),
+        "sharedpolicy": None,
+        "sharedboth": None,
+    }[args.policy_network]
+    policy: Union[str, ActorCriticPolicy, partial[ActorCriticPolicy]]
+    if args.policy_
