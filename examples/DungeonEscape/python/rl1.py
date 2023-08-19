@@ -96,4 +96,24 @@ def run(args: argparse.Namespace) -> None:
         "sharedboth": None,
     }[args.policy_network]
     policy: Union[str, ActorCriticPolicy, partial[ActorCriticPolicy]]
-    if args.policy_
+    if args.policy_network == "sharedpolicy":
+        policy = partial(models.MyPolicy, PolicyNetwork=models.MySharedNetworkPolicy)
+    elif args.policy_network == "sharedboth":
+        policy = partial(models.MyPolicy, PolicyNetwork=models.MySharedNetworkBoth)
+    else:
+        policy = "MlpPolicy"
+    ppo = PPO(
+        env=my_env,
+        policy=policy,  # type: ignore
+        learning_rate=0.0002,
+        ent_coef=args.ent_reg,
+        verbose=1,
+        policy_kwargs=policy_kwargs,
+    )
+    print("policy", ppo.policy)
+    assert ppo.policy is not None
+    total_params = dump_params_counts(ppo.policy)
+    mlflow_logger = None
+    if not args.no_mlflow:
+        params_to_log = {"num_params": total_params}
+        mlflow_logger = mlflow_logging.MLFlowLogger(
