@@ -117,3 +117,28 @@ def run(args: argparse.Namespace) -> None:
     if not args.no_mlflow:
         params_to_log = {"num_params": total_params}
         mlflow_logger = mlflow_logging.MLFlowLogger(
+            experiment_name="unityml",
+            run_name=args.ref,
+            params_to_log=params_to_log,
+        )
+        mlflow_logger.log_args(args)
+        loggers = mlflow_logging.create_loggers(mlflow_logger=mlflow_logger)
+        ppo.set_logger(loggers)
+    callback = SBS3CheckpointCallback(
+        mlflow_logger=mlflow_logger,
+        n_steps=ppo.n_steps,
+        iterations_multiplier=args.checkpoint_epochs_multiplier,
+        save_path=path.join("models", args.ref),
+    )
+    ppo.learn(total_timesteps=10000000, callback=callback)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--ports",
+        type=int,
+        nargs="+",
+        default=[9000],
+        help="Provide more than one to run against multiple unity processes.",
+    )
