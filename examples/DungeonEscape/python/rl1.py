@@ -142,3 +142,28 @@ if __name__ == "__main__":
         default=[9000],
         help="Provide more than one to run against multiple unity processes.",
     )
+    parser.add_argument(
+        "--server-executable-path",
+        type=str,
+        help="optional path to dedicated server executable",
+    )
+    parser.add_argument("--ref", type=str, required=True)
+    parser.add_argument("--no-mlflow", action="store_true")
+    parser.add_argument(
+        "--policy-network",
+        type=str,
+        default="sharedboth",
+        choices=[
+            "default",
+            "3x128:relu",
+            "3x256:relu",
+            "3x512:relu",
+            "sharedpolicy",
+            "sharedboth",
+        ],
+    )
+    parser.add_argument(
+        "--checkpoint-epochs-multiplier",
+        type=float,
+        default=2,
+        help="checkpoint epochs is power
