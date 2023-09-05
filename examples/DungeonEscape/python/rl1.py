@@ -166,4 +166,8 @@ if __name__ == "__main__":
         "--checkpoint-epochs-multiplier",
         type=float,
         default=2,
-        help="checkpoint epochs is power
+        help="checkpoint epochs is power of this multiplier and checkpoint index",
+    )
+    parser.add_argument("--ent-reg", default=0.001, type=float)
+    args = parser.parse_args()
+    run(args)
