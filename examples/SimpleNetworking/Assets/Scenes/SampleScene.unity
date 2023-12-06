@@ -447,4 +447,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 872743813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -294509474, guid: 666d74f9aa424489b9b7bd10aadc7bb6, type
+  m_Script: {fileID: -294509474, guid: 666d74f9aa424489b9b7bd10aadc7bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenPort: 9000
+  ListenAddress: localhost
+  LogFilepath: /tmp/netmanager.log
+  SleepAfterLogLineMilliseconds: 100
+  AutoEnableRunInBackground: 1
+--- !u!135 &872743816
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872743813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &872743817
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872743813}
+  m_Enabled: 1
+  m_Ca
