@@ -49,4 +49,4 @@ MonoBehaviour:
   m_DepthPrimingMode: 0
   m_AccurateGbufferNormals: 0
   m_ClusteredRendering: 0
-  m_Tile
+  m_TileSize: 32
