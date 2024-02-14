@@ -65,4 +65,5 @@ MonoBehaviour:
   m_MaxPixelLights: 0
   m_ShadowAtlasResolution: 256
   m_ShaderVariantLogLevel: 0
-  m_VolumeFrameworkUpdateMo
+  m_VolumeFrameworkUpdateMode: 0
+  m_ShadowCascades: 0
