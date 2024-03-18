@@ -607,4 +607,33 @@ PlayerSettings:
   switchSmallIcons_12: {fileID: 0}
   switchSmallIcons_13: {fileID: 0}
   switchSmallIcons_14: {fileID: 0}
-  switchSmallIcons_
+  switchSmallIcons_15: {fileID: 0}
+  switchManualHTML: 
+  switchAccessibleURLs: 
+  switchLegalInformation: 
+  switchMainThreadStackSize: 1048576
+  switchPresenceGroupId: 
+  switchLogoHandling: 0
+  switchReleaseVersion: 0
+  switchDisplayVersion: 1.0.0
+  switchStartupUserAccount: 0
+  switchTouchScreenUsage: 0
+  switchSupportedLanguagesMask: 0
+  switchLogoType: 0
+  switchApplicationErrorCodeCategory: 
+  switchUserAccountSaveDataSize: 0
+  switchUserAccountSaveDataJournalSize: 0
+  switchApplicationAttribute: 0
+  switchCardSpecSize: -1
+  switchCardSpecClock: -1
+  switchRatingsMask: 0
+  switchRatingsInt_0: 0
+  switchRatingsInt_1: 0
+  switchRatingsInt_2: 0
+  switchRatingsInt_3: 0
+  switchRatingsInt_4: 0
+  switchRatingsInt_5: 0
+  switchRatingsInt_6: 0
+  switchRatingsInt_7: 0
+  switchRatingsInt_8: 0
+ 
