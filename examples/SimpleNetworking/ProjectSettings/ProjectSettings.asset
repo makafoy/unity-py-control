@@ -872,4 +872,4 @@ PlayerSettings:
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
   forceSRGBBlit: 1
-  virtualTexturingSupp
+  virtualTexturingSupportEnabled: 0
