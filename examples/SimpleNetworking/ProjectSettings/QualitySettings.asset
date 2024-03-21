@@ -103,4 +103,29 @@ QualitySettings:
     vSyncCount: 1
     lodBias: 2
     maximumLODLevel: 0
-    
+    streamingMipmapsActive: 0
+    streamingMipmapsAddAllCameras: 1
+    streamingMipmapsMemoryBudget: 512
+    streamingMipmapsRenderersPerFrame: 512
+    streamingMipmapsMaxLevelReduction: 2
+    streamingMipmapsMaxFileIORequests: 1024
+    particleRaycastBudget: 2048
+    asyncUploadTimeSlice: 2
+    asyncUploadBufferSize: 16
+    asyncUploadPersistentBuffer: 1
+    resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 11400000, guid: 7b7fd9122c28c4d15b667c7040e3b3fd,
+      type: 2}
+    excludedTargetPlatforms: []
+  m_PerPlatformDefaultQuality:
+    Android: 1
+    CloudRendering: 2
+    Lumin: 2
+    GameCoreScarlett: 2
+    GameCoreXboxOne: 2
+    Nintendo Switch: 2
+    PS4: 2
+    PS5: 2
+    Server: 0
+    Stadia: 2
+    St
