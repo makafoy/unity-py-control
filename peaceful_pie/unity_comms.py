@@ -199,3 +199,14 @@ class UnityComms:
                 print("res", res)
                 if res is not None:
                     print("res.content", res.content)
+                print("e", e)
+                if self.logfile is not None:
+                    with open(self.logfile, "a") as f:
+                        datetime_str = datetime.datetime.now().strftime("%Y%m%d %H%M%S")
+                        f.write(f"{datetime_str}: payload {payload}\n")
+                        f.write(f"{datetime_str}: res {res}\n")
+                        if res is not None:
+                            f.write(f"{datetime_str}: res.content {str(res.content)}\n")
+                        f.write(f"{datetime_str}: e {e}\n")
+                time.sleep(0.1)
+        return response
