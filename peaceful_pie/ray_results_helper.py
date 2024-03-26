@@ -33,4 +33,20 @@ def ray_results_to_feature_np(
     In detail: the distances will be inverted, so that nearer gives a higher number, and further gives
     smaller. this number will be assigned to the output plane indexed by object type.
     If object type is -1, the output will be set to 0 across all output channels
-  
+    """
+    distances_np = np.array(ray_results.rayDistances)
+    distances_np = 1 / distances_np
+    object_types_np = np.array(ray_results.rayHitObjectTypes)
+    # add one feature plane for the object type of -1
+    _obs = np.zeros(
+        (ray_results.NumObjectTypes + 1, *distances_np.shape), dtype=np.float32
+    )
+    np.put_along_axis(
+        _obs,
+        np.expand_dims(object_types_np, axis=0),
+        np.expand_dims(distances_np, axis=0),
+        axis=0,
+    )
+    # truncate off the not found object feature plane
+    _obs = _obs[:-1]
+    return _obs
